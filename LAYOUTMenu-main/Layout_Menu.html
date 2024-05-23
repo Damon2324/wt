@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appealing Responsive Layout</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        header, footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+        }
+
+        nav {
+            flex: 0 0 20%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        }
+
+        aside {
+            flex: 0 0 20%;
+            background-color: #6f42c1;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #343a40;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #f8f9fa;
+        }
+
+        @media only screen and (max-width: 600px) {
+            main {
+                flex-direction: column;
+            }
+
+            nav, section, aside {
+                width: 100%;
+                flex: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Appealing Responsive Layout</h1>
+    </header>
+
+    <main>
+        <nav>
+            <h2>Left Menu</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h2>Main Content</h2>
+            <p>This is the main content section of the page.</p>
+        </section>
+
+        <aside>
+            <h2>Right Menu</h2>
+            <ul>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

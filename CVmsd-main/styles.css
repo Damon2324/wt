@@ -1,0 +1,220 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, table {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #myVideo {
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    object-fit: cover;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    /*background-color: #f8f8f8;*/
+    color: #333;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left-column {
+    flex: 1.5;
+    max-width: 700px;
+    /* background-color: #f8f8f8; */
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .right-column {
+    flex: 1;
+    max-width: 300px;
+    background-color: #333;
+    color: #f8f8f8;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .left-column h2 {
+    color: #007bff;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .right-column h2 {
+    color: #007bff;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #f8f8f8; /* Set text color to white */
+  }
+  
+  .contact-info {
+    margin-top: 2rem;
+  }
+  
+  .contact-info p {
+    color: #bbb;
+  }
+  
+  #publications p {
+    color: #bbb;
+    margin-bottom: 1rem;
+  }
+  
+  /* Additional styles for the left-column content */
+  .left-column p {
+    color: #444;
+  }
+  
+  .left-column ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    color: #444;
+  }
+  
+  .left-column table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .left-column th, .left-column td {
+    border: 1px solid #007bff;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  .left-column th {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .left-column .project h3 {
+    color: #007bff;
+  }
+  
+  .left-column .skills li {
+    color: #333;
+  }
+  
+  /* Additional styles for the right-column content */
+  .right-column .contact-info img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .right-column .contact-info a {
+    text-decoration: none;
+    color: #f8f8f8; /* Set text color to white */
+  }
+  
+  .right-column .contact-info a:hover {
+    color: #007bff;
+  }
+  
+  .right-column .contact-info p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .right-column #publications p {
+    margin-bottom: 1rem;
+  }
+/* Your existing CSS styles here */
+
+/* Additional styles for the header */
+header {
+    background-color: #11355c;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 2px solid #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .circle-photo {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-right: 1rem; /* Adjust the margin as needed */
+  }
+  
+  .circle-photo img {
+    width: 150px; /* Adjust the size of the circle photo as needed */
+    border-radius: 50%;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  .personal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Additional styles for the rest of your content */
+  
+
+  

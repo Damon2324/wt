@@ -1,0 +1,46 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.input {
+    margin: 20px;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+}
+
+input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+select {
+    width: 200px;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchResult {
+    font-weight: bold;
+    margin-top: 10px;
+}

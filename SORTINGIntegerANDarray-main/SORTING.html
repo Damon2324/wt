@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Search and Sort Program</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        /* Header styling */
+        h1 {
+            text-align: center;
+        }
+
+        /* Input and button styling */
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* List styling */
+        #itemList {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #itemList li {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search and Sort Program</h1>
+    <label for="searchInput">Search:</label>
+    <input type="text" id="searchInput" onkeyup="searchItems()" placeholder="Enter a name or number">
+
+    <button onclick="sortStringsAscending()">Sort Strings Ascending</button>
+    <button onclick="sortStringsDescending()">Sort Strings Descending</button>
+    <button onclick="sortIntegersAscending()">Sort Integers Ascending</button>
+    <button onclick="sortIntegersDescending()">Sort Integers Descending</button>
+
+    <ul id="itemList">
+        <li>Shreyash</li>
+        <li>4</li>
+        <li>Abhay</li>
+        <li>7</li>
+        <li>Vedant</li>
+        <li>1</li>
+        <li>Raj</li>
+        <li>Anurag</li>
+        <li>Mayank</li>
+    </ul>
+
+    <script>
+        const items = [
+            "Shreyash",
+            42,
+            "Abhay",
+            15,
+            "Vedant",
+            7,
+            "Mayank",
+            "Raj",
+            "Anurag"
+        ];
+
+        function displayItems(itemsArray) {
+            const itemList = document.getElementById("itemList");
+            itemList.innerHTML = "";
+
+            itemsArray.forEach(function (item) {
+                const li = document.createElement("li");
+                li.textContent = item;
+                itemList.appendChild(li);
+            });
+        }
+
+        function searchItems() {
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const filteredItems = items.filter(function (item) {
+                return item.toString().toLowerCase().includes(searchInput);
+            });
+            displayItems(filteredItems);
+        }
+
+        function sortStringsAscending() {
+            const stringItems = items.filter(item => typeof item === 'string');
+            const sortedStrings = [...stringItems].sort();
+            displayItems(sortedStrings);
+        }
+
+        function sortStringsDescending() {
+            const stringItems = items.filter(item => typeof item === 'string');
+            const sortedStrings = [...stringItems].sort().reverse();
+            displayItems(sortedStrings);
+        }
+
+        function sortIntegersAscending() {
+            const integerItems = items.filter(item => typeof item === 'number');
+            const sortedIntegers = [...integerItems].sort((a, b) => a - b);
+            displayItems(sortedIntegers);
+        }
+
+        function sortIntegersDescending() {
+            const integerItems = items.filter(item => typeof item === 'number');
+            const sortedIntegers = [...integerItems].sort((a, b) => b - a);
+            displayItems(sortedIntegers);
+        }
+
+        // Initial display
+        displayItems(items);
+    </script>
+</body>
+</html>

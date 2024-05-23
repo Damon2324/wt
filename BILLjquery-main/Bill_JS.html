@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Bill_JS.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Electricity Bill Calculator</h1>
+        <form id="billForm">
+            <div class="form-group">
+                <label for="unitsConsumed">Units Consumed:</label>
+                <input type="number" class="form-control" id="unitsConsumed" placeholder="Enter units">
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate Bill</button>
+        </form>
+        <div id="result" class="mt-3"></div>
+    </div>
+    
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#billForm').submit(function(event) {
+                event.preventDefault();
+                calculateBill();
+            });
+
+            function calculateBill() {
+                const unitsConsumed = parseFloat($('#unitsConsumed').val());
+                let totalAmount = 0;
+
+                if (unitsConsumed <= 50) {
+                    totalAmount = unitsConsumed * 3.50;
+                } else if (unitsConsumed <= 150) {
+                    totalAmount = 50 * 3.50 + (unitsConsumed - 50) * 4.00;
+                } else if (unitsConsumed <= 250) {
+                    totalAmount = 50 * 3.50 + 100 * 4.00 + (unitsConsumed - 150) * 5.20;
+                } else {
+                    totalAmount = 50 * 3.50 + 100 * 4.00 + 100 * 5.20 + (unitsConsumed - 250) * 6.50;
+                }
+
+                $('#result').html(<p>Total Amount: Rs. ${totalAmount.toFixed(2)}</p>);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sort a HTML List Numerically</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+<body>
+
+    <div class="input">
+        <p>Enter a number: </p>
+        <input type="number" id="addValue">
+        <button type="submit" onclick="addList()">Add</button>
+    </div>
+
+    <p>Click the button to sort the list numerically:</p>
+
+    <select name="number" id="dropdown1" multiple>
+    </select>
+    <br>
+    <br>
+    <button onclick="sortList()">Sort</button>
+    <br>
+    <br>
+    <select name="number" id="dropdown2" multiple>
+    </select>
+
+    <br>
+    <br>
+    <p>Enter the number to search</p>
+    <input type="number" id="search">
+    <button type="submit" onclick="search()">Search</button>
+
+    <p id="searchResult"></p> 
+
+    <script>
+        var dropdown2Values = []; 
+
+        function sortList() {
+            var list2 = document.getElementById("dropdown2");
+
+            dropdown2Values.sort(function(a, b) {
+                return a - b;
+            });
+
+            list2.innerHTML = "";
+
+            for (var i = 0; i < dropdown2Values.length; i++) {
+                var newOption = document.createElement('option');
+                newOption.value = dropdown2Values[i];
+                newOption.innerHTML = dropdown2Values[i];
+                list2.appendChild(newOption);
+            }
+        }
+
+        function addList() {
+            var dropdown1 = document.getElementById('dropdown1');
+            var dropdown2 = document.getElementById('dropdown2');
+            var addValue = document.getElementById('addValue');
+            var newValue = addValue.value;
+
+            if (newValue != '') {
+                var newOption1 = document.createElement('option');
+                newOption1.value = newValue;
+                newOption1.innerHTML = newValue;
+                dropdown1.add(newOption1);
+
+                var newOption2 = document.createElement('option');
+                newOption2.value = newValue;
+                newOption2.innerHTML = newValue;
+                dropdown2.add(newOption2);
+                dropdown2Values.push(Number(newValue));
+
+                addValue.value = '';
+            }
+        }
+
+        function search() {
+            var allNumbers = document.getElementById('dropdown2').options;
+            var searched = document.getElementById('search').value;
+            var searchResult = document.getElementById('searchResult');
+
+            for (var i = 0; i < allNumbers.length; i++) {
+                if (allNumbers[i].value === searched) {
+                    searchResult.innerHTML = 'Position: ' + (i + 1);
+                    return;
+                }
+            }
+
+            searchResult.innerHTML = 'Number not found in the list.';
+        }
+    </script>
+
+</body>
+</html>
